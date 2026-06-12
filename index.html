@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Meu Amor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffe3e3 0%, #ffd1d1 50%, #ffa8a8 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fundo decorativo com coraçõezinhos flutuantes */
+        .decoracao-fundo {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Coração Central Interativo */
+        .coracao-container {
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .coracao {
+            background-color: #ff4d6d;
+            display: inline-block;
+            height: 140px;
+            position: relative;
+            transform: rotate(-45deg);
+            width: 140px;
+            animation: pulsar 1.2s infinite;
+            box-shadow: 0 10px 30px rgba(255, 77, 109, 0.4);
+        }
+
+        .coracao:before,
+        .coracao:after {
+            content: "";
+            background-color: #ff4d6d;
+            border-radius: 50%;
+            height: 140px;
+            position: absolute;
+            width: 140px;
+        }
+
+        .coracao:before {
+            top: -70px;
+            left: 0;
+        }
+
+        .coracao:after {
+            left: 70px;
+            top: 0;
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.15) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+
+        .clique-texto {
+            margin-top: 40px;
+            color: #ff4d6d;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: piscar 1.5s infinite;
+        }
+
+        @keyframes piscar {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Carta Romântica (Escondida no início) */
+        .carta-oculta {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 20;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .carta-conteudo {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ffccd5;
+            transform: translateY(20px);
+            transition: transform 0.5s ease;
+        }
+
+        .carta-conteudo h1 {
+            color: #ff4d6d;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .carta-conteudo p {
+            color: #4a4a4a;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .btn-fechar {
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-fechar:hover {
+            background-color: #ff758f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="decoracao-fundo">
+        <svg style="position:absolute; top:10%; left:10%; fill:#ffb3c1; opacity:0.5;" width="30" height="30" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg style="position:absolute; top:20%; right:15%; fill:#ffb3c1; opacity:0.6;" width="45" height="45" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5
